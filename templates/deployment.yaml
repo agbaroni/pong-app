@@ -15,7 +15,7 @@ spec:
         app: {{ .Values.app_name }}
     spec:
       containers:
-        - image: {{ .Values.app_name }}:{{ .Values.app_version }}
+        - image: pong:latest
           imagePullPolicy: Always
           name: {{ .Values.app_name }}
           ports:
