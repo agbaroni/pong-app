@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pong
+  name: {{ .Values.app_name }}
   namespace: pang
 spec:
   replicas: 1
   selector:
-    app: pong
+    app: {{ .Values.app_name }}
   template:
     metadata:
       annotations:
         alpha.image.policy.openshift.io/resolve-names: '*'
       labels:
-        app: pong
+        app: {{ .Values.app_name }}
     spec:
       containers:
-        - image: pong:latest
+        - image: {{ .Values.app_name }}:{{ .Values.app_version }}
           imagePullPolicy: Always
-          name: pong
+          name: {{ .Values.app_name }}
           ports:
             - containerPort: 8080
           resources:
