@@ -9,6 +9,8 @@ spec:
     app: pong
   template:
     metadata:
+      annotations:
+        alpha.image.policy.openshift.io/resolve-names: '*'
       labels:
         app: pong
     spec:
