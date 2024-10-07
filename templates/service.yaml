@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pong
+  namespace: pang
+spec:
+  selector:
+    app: pong
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
