@@ -1,5 +1,7 @@
 apiVersion: project.openshift.io/v1
 kind: Project
 metadata:
+  annotations:
+    openshift.io/display-name: The project for Pong
   name: pang
 spec: {}
