@@ -1,8 +1,8 @@
 apiVersion: shipwright.io/v1beta1
 kind: Build
 metadata:
-  name: pong
-  namespace: pang
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
 spec:
   output:
     image: 'image-registry.openshift-image-registry.svc.cluster.local:5000/pang/pong:latest'
