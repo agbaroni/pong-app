@@ -1,8 +1,8 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: pong
-  namespace: pang
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
 spec:
   to:
     kind: Service
