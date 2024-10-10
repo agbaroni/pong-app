@@ -1,8 +1,8 @@
 apiVersion: image.openshift.io/v1
 kind: ImageStream
 metadata:
-  name: pong
-  namespace: pang
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
 spec:
   lookupPolicy:
     local: true
