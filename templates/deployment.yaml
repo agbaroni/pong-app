@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"pong:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"pong\")].image"}]'
   name: {{ .Values.name }}
   namespace: {{ .Values.namespace }}
 spec:
